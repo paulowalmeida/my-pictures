@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ErrorsModule } from './errors/errors.module';
-import { NotFoundComponent } from './errors/not-found/not-found.component';
 
 import { PhotoFormComponent } from './photos/containers/photo-form/photo-form.component';
-import { PhotoListComponent } from './photos/containers/photo-list/photo-list.component';
+import { PhotoGaleryComponent } from './photos/containers/photo-galery/photo-galery.component';
+import { NotFoundComponent } from './errors/components/not-found/not-found.component';
 
 const routes: Routes = [
   {
-    path: 'user/flavio',
-    component: PhotoListComponent,
+    path: 'user/:userName',
+    component: PhotoGaleryComponent,
   },
   {
     path: 'p/add',

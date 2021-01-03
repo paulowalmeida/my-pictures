@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+.hoverable{
+    -webkit-transition:-webkit-box-shadow .25s;
+    transition:-webkit-box-shadow .25s;
+    transition:box-shadow .25s;
+    transition:box-shadow .25s, 
+    -webkit-box-shadow .25s
+}
+.hoverable:hover{
+    -webkit-box-shadow:0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow:0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+*{
+    font-family: 'Raleway';
+}
+
+.no-border {
+    border: 0 !important;
+}
+
+.no-shadow{
+    box-shadow: 0 !important;
+}
+
+.background-white{
+    background-color: #fff !important;
+}
