@@ -1,0 +1,14 @@
+<p class="text-center text-muted" *ngIf="!photos; else listPhotos">
+  Sorry, no photos
+  <i class="fa fa-frown-o"></i>
+</p>
+
+<ng-template #listPhotos>
+  <ol class="list-unstyled">
+    <li *ngFor="let cols of rows" class="row">
+      <div *ngFor="let photo of cols" class="col-4">
+        <app-photo [photo]="photo"></app-photo>
+      </div>
+    </li>
+  </ol>
+</ng-template>

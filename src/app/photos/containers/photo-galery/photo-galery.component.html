@@ -1,0 +1,3 @@
+<app-photos-search (onTyping)="filter = $event" [value]="filter"></app-photos-search>
+
+<app-photo-list [photos]="photos$ | async"></app-photo-list>

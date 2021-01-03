@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 import { Observable } from 'rxjs';
+
 import { Photo } from '../../../shared/models/photo/photo.model';
-import { PhotoService } from './photo.service';
+import { PhotoGaleryService } from './photo-galery.service';
 
 @Component({
-  selector: 'app-photo-list',
-  templateUrl: './photo-list.component.html',
+  selector: 'app-photo-galery',
+  templateUrl: './photo-galery.component.html',
 })
-export class PhotoListComponent implements OnInit {
+export class PhotoGaleryComponent implements OnInit {
   photos$: Observable<Photo[]>;
-
+  rows: number;
+  filter: string = '';
+  
   constructor(
-    readonly photoService: PhotoService,
+    readonly photoService: PhotoGaleryService,
     readonly activatedRoute: ActivatedRoute
   ) {}
 

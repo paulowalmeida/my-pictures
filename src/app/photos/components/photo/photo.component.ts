@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Photo } from 'src/app/shared/models/photo/photo.model';
 
 @Component({
   selector: 'app-photo',
@@ -6,8 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class PhotoComponent {
   @Input()
-  description = '';
-
-  @Input()
-  url = '';
+  photo: Photo;
 }
