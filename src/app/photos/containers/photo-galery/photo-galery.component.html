@@ -2,5 +2,8 @@
 
 <app-photo-list 
     [userName]="userName" 
-    [photos]="photos$ | async">
+    [photos]="photos$ | async | filterByDescription: filter"
+    [photosMore]="photosMore">
 </app-photo-list>
+
+<app-photos-load-more [hasMore]="hasMore" (click)="load()"></app-photos-load-more>

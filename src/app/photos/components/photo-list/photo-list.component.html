@@ -1,5 +1,5 @@
 <p class="text-center text-muted" *ngIf="!photos; else listPhotos">
-  Desculpe, {{ userName.charAt(0).toUpperCase() + userName.slice(1)}} não tem fotos.
+  Desculpe, {{ userName | capitalize }} não tem fotos.
   <i class="fa fa-frown-o"></i>
 </p>
 
