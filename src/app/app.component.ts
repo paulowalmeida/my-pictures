@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { PhotoService } from './photos/photo/photo.service';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,7 @@ export class AppComponent {
   title = 'My Pictures';
   photos$: Observable<any[]>;
 
-  constructor(private httpClient: HttpClient) {
-    const url = `${environment.URL_API}/flavio/photos`;
-    this.photos$ = httpClient.get<any[]>(url);
+  constructor(private photoService: PhotoService) {
+    this.photos$ = this.photoService.getPhotos('flavio');
   }
 }
