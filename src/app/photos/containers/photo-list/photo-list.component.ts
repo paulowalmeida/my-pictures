@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Photo } from '../../../shared/models/photo/photo.model';
 import { PhotoService } from './photo.service';
@@ -10,9 +11,13 @@ import { PhotoService } from './photo.service';
 export class PhotoListComponent implements OnInit {
   photos$: Observable<Photo[]>;
 
-  constructor(private photoService: PhotoService) {}
+  constructor(
+    readonly photoService: PhotoService,
+    readonly activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.photos$ = this.photoService.getPhotos('flavio');
+    const { userName } = this.activatedRoute.snapshot.params;
+    this.photos$ = this.photoService.getUserPhotos(userName);
   }
 }
