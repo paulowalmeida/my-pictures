@@ -20,6 +20,7 @@ export class PhotoGaleryComponent implements OnInit {
   userName: string = '';
   currentPage: number = 1;
   hasMore: boolean = true;
+  listEmpty: boolean = false;
 
   constructor(
     readonly photoService: PhotoService,

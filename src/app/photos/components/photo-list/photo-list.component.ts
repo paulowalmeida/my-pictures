@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, Output, SimpleChanges, EventEmitter } from '@angular/core';
 
 import { Photo } from 'src/app/shared/models/photo/photo.model';
 
@@ -16,9 +16,16 @@ export class PhotoListComponent implements OnChanges {
 
   @Input()
   userName: string = '';
+  
+  @Input()
+  filter: string = '';
+
+  @Output()
+  onListEmpty: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   rows: any[] = [];
 
+  
   ngOnChanges({photos, photosMore}: SimpleChanges) {
     if(photos && !photosMore){
       this.rows = this.getGroupColumns();
@@ -26,6 +33,10 @@ export class PhotoListComponent implements OnChanges {
     else if(!photos && photosMore){
       this.photos = [...this.photos, ...this.photosMore];
       this.rows = this.getGroupColumns();
+    }
+
+    if(this.photos.length === 0){
+      this.onListEmpty.emit(true);
     }
   }
 

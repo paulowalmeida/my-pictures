@@ -6,7 +6,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PhotosLoadMoreComponent implements OnInit{
 
-    @Input() hasMore:boolean = false;
+    @Input() 
+    hasMore:boolean = false;
+
+    @Input()
+    isListEmpty: boolean = false;
 
     constructor(){}
 

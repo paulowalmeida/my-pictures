@@ -5,6 +5,6 @@ export const Paths = {
     
 }
 
-export const PathWithParameters = {
+export const pathWithParameters = {
     galery:(userName: string) => `${URL_API}/${userName}/photos`
 }

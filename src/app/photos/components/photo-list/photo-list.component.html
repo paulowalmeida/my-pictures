@@ -1,4 +1,4 @@
-<p class="text-center text-muted" *ngIf="!photos; else listPhotos">
+<p class="text-center text-muted" *ngIf="!photos.length && filter == ''; else listPhotos">
   Desculpe, {{ userName | capitalize }} não tem fotos.
   <i class="fa fa-frown-o"></i>
 </p>

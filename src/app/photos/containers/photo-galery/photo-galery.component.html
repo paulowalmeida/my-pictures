@@ -1,9 +1,18 @@
-<app-photos-search (onTyping)="filter = $event" [value]="filter"></app-photos-search>
+<app-photos-search 
+    (onTyping)="filter = $event" 
+    [value]="filter">
+</app-photos-search>
 
-<app-photo-list 
+<app-photo-list
+    (onListEmpty)="listEmpty = $event"
     [userName]="userName" 
     [photos]="photos$ | async | filterByDescription: filter"
+    [filter]="filter"
     [photosMore]="photosMore">
 </app-photo-list>
 
-<app-photos-load-more [hasMore]="hasMore" (click)="load()"></app-photos-load-more>
+<app-photos-load-more
+    (click)="load()"
+    [isListEmpty]="listEmpty"
+    [hasMore]="hasMore">
+</app-photos-load-more>
