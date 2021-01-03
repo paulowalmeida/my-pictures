@@ -14,7 +14,8 @@ export class PhotoGaleryComponent implements OnInit {
   photos$: Observable<Photo[]>;
   rows: number;
   filter: string = '';
-  
+  userName: string = '';
+
   constructor(
     readonly photoService: PhotoGaleryService,
     readonly activatedRoute: ActivatedRoute
@@ -22,6 +23,7 @@ export class PhotoGaleryComponent implements OnInit {
 
   ngOnInit() {
     const { userName } = this.activatedRoute.snapshot.params;
+    this.userName = userName;
     this.photos$ = this.photoService.getUserPhotos(userName);
   }
 }

@@ -10,6 +10,9 @@ export class PhotoListComponent implements OnChanges {
   @Input()
   photos: Photo[] = [];
 
+  @Input()
+  userName: string = '';
+
   rows: any[] = [];
 
   ngOnChanges(changes: SimpleChanges) {
