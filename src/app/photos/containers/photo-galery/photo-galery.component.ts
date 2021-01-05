@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { includeToLowerCaseIn } from 'src/app/shared/helpers/photos.helpers';
-
 import { PhotoService } from 'src/app/shared/services/photo.service';
 import { Photo } from '../../../shared/models/photo/photo.model';
 
@@ -13,29 +9,21 @@ import { Photo } from '../../../shared/models/photo/photo.model';
   templateUrl: './photo-galery.component.html',
 })
 export class PhotoGaleryComponent implements OnInit {
-  photos$: Observable<Photo[]>;
-  photosMore: Photo[] = [];
-  rows: number;
+  photos: Photo[];
   filter: string = '';
   userName: string = '';
   currentPage: number = 1;
   hasMore: boolean = true;
-  listEmpty: boolean = false;
 
   constructor(
-    readonly photoService: PhotoService,
-    readonly activatedRoute: ActivatedRoute
+    readonly activatedRoute: ActivatedRoute,
+    readonly photoService: PhotoService
   ) {}
 
   ngOnInit() {
-    const { userName } = this.activatedRoute.snapshot.params;
+    const { data: { photos }, params: { userName } } = this.activatedRoute.snapshot;
+    this.photos = photos;
     this.userName = userName;
-    this.photos$ = this.photoService.getUserPhotos(userName)
-      .pipe( 
-        map(photos => {
-          return includeToLowerCaseIn(photos) 
-        })
-      )
   }
 
   load() {
@@ -44,7 +32,7 @@ export class PhotoGaleryComponent implements OnInit {
       .subscribe((photos) => {
         this.filter = '';
         if (photos.length === 0) this.hasMore = false;
-        else this.photosMore = includeToLowerCaseIn(photos);
+        else this.photos = [...this.photos,...photos];
       });
   }
 }

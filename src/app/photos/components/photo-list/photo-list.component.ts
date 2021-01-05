@@ -12,32 +12,16 @@ export class PhotoListComponent implements OnChanges {
   photos: Photo[] = [];
 
   @Input()
-  photosMore: Photo[] = [];
-
-  @Input()
   userName: string = '';
   
   @Input()
   filter: string = '';
 
-  @Output()
-  onListEmpty: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   rows: any[] = [];
 
   
-  ngOnChanges({photos, photosMore}: SimpleChanges) {
-    if(photos && !photosMore){
-      this.rows = this.getGroupColumns();
-    }
-    else if(!photos && photosMore){
-      this.photos = [...this.photos, ...this.photosMore];
-      this.rows = this.getGroupColumns();
-    }
-
-    if(this.photos.length === 0){
-      this.onListEmpty.emit(true);
-    }
+  ngOnChanges({photos}: SimpleChanges) {
+    if(photos) this.rows = this.getGroupColumns();
   }
 
   getGroupColumns(): any[] {
@@ -45,7 +29,6 @@ export class PhotoListComponent implements OnChanges {
     for (let i = 0; i < this.photos.length; i += 3) {
       newRows.push(this.photos.slice(i, i + 3));
     }
-
     return newRows;
   }
 }

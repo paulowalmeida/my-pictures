@@ -8,7 +8,6 @@ import { Photo } from '../models/photo/photo.model';
 export class FilterByDescription implements PipeTransform{
     
     transform(photos: Photo[], descriptionQuery: string) {
-        console.log('o que veio? ', photos)
         descriptionQuery = descriptionQuery.trim().toLowerCase();
 
         return descriptionQuery !== '' && descriptionQuery !== undefined  && photos.length > 0 ? 

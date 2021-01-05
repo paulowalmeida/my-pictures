@@ -9,9 +9,6 @@ export class PhotosLoadMoreComponent implements OnInit{
     @Input() 
     hasMore:boolean = false;
 
-    @Input()
-    isListEmpty: boolean = false;
-
     constructor(){}
 
     ngOnInit(): void {

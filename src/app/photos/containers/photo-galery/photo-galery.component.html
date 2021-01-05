@@ -4,15 +4,13 @@
 </app-photos-search>
 
 <app-photo-list
-    (onListEmpty)="listEmpty = $event"
     [userName]="userName" 
-    [photos]="photos$ | async | filterByDescription: filter"
-    [filter]="filter"
-    [photosMore]="photosMore">
+    [photos]="photos | filterByDescription: filter"
+    [filter]="filter">
 </app-photo-list>
+
 
 <app-photos-load-more
     (click)="load()"
-    [isListEmpty]="listEmpty"
     [hasMore]="hasMore">
 </app-photos-load-more>
