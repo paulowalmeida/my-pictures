@@ -1,25 +1,20 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
+import { SharedModule } from 'src/app/shared/shared.module';
 
-import { SharedModule } from "src/app/shared/shared.module";
-import { PhotoListComponent } from "./photo-list/photo-list.component";
-import { PhotoLoadMoreComponent } from "./photo-load-more/photo-load-more.component";
-import { PhotoComponent } from "./photo/photo.component";
-import { PhotoSearchComponent } from "./photo-search/photo-search.component";
+import { PhotoListModule } from './photo-list/photo-list.module';
+import { PhotoLoadMoreModule } from './photo-load-more/photo-load-more.module';
+import { PhotoSearchModule } from './photo-search/photo-search.module';
 
 @NgModule({
-    declarations: [
-        PhotoComponent,
-        PhotoListComponent,
-        PhotoLoadMoreComponent,
-        PhotoSearchComponent
-    ],
-    imports: [
-        SharedModule
-    ],
-    exports: [
-        PhotoListComponent,
-        PhotoLoadMoreComponent,
-        PhotoSearchComponent
-    ]
+  imports: [
+    PhotoListModule,
+    PhotoLoadMoreModule,
+    PhotoSearchModule
+  ],
+  exports: [
+    PhotoListModule,
+    PhotoLoadMoreModule,
+    PhotoSearchModule
+  ]
 })
-export class PhotoComponentsModule{ }
+export class PhotoComponentsModule { }

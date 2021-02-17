@@ -9,10 +9,8 @@ import { PhotoGaleryComponent } from "./photo-galery.component";
       PhotoGaleryComponent
     ],
     imports: [
-      PhotoComponentsModule,
-      SharedModule
+      SharedModule,
+      PhotoComponentsModule
     ]
 })
-export class PhotoGaleryModule{
-
-}
+export class PhotoGaleryModule{ }
