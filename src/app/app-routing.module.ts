@@ -4,11 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { PhotoFormComponent } from './photos/containers/photo-form/photo-form.component';
 import { PhotoGaleryComponent } from './photos/containers/photo-galery/photo-galery.component';
 import { NotFoundComponent } from './errors/components/not-found/not-found.component';
-import { PhotoListResolverService } from './shared/resolvers/photo-list.resolver.service';
+import { PhotoListResolverService } from './shared/resolvers/photo-list/photo-list.resolver.service';
 
 const routes: Routes = [
   {
-    path: 'user/:userName',
+    path: 'user/:username',
     component: PhotoGaleryComponent,
     resolve: {
       photos: PhotoListResolverService

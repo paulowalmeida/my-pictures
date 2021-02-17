@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "my-pictures"
+  "defaultProject": "my-pictures",
+  "cli": {
+    "analytics": "91cde56b-b79a-48db-89d2-62af98d570df"
+  }
 }

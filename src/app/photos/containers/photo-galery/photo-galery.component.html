@@ -1,16 +1,15 @@
-<app-photos-search 
-    (onTyping)="filter = $event" 
-    [value]="filter">
-</app-photos-search>
+<app-photo-search
+  (onTyping)="filter= $event"
+  [value]="filter">
+</app-photo-search>
 
 <app-photo-list
-    [userName]="userName" 
-    [photos]="photos | filterByDescription: filter"
-    [filter]="filter">
+  [username]="username"
+  [photos]="photos | filterByDescription: filter"
+  [filter]="filter">
 </app-photo-list>
 
-
-<app-photos-load-more
-    (click)="load()"
-    [hasMore]="hasMore">
-</app-photos-load-more>
+<app-photo-load-more
+  (click)="load()"
+  [hasMore]="hasMore">
+</app-photo-load-more>

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { pathWithParameters } from 'src/app/config/paths';
-import { Photo } from '../models/photo/photo.model';
+import { Photo } from '../../models/photo/photo.model';
 
 @Injectable({ providedIn: 'root' })
 export class PhotoService {
@@ -33,5 +33,4 @@ export class PhotoService {
       })
     );
   };
-  
 }
