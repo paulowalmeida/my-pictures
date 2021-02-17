@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
 
 import { PhotoGaleryComponent } from './photo-galery.component';
 
@@ -8,7 +9,8 @@ describe('PhotoGaleryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PhotoGaleryComponent]
+      declarations: [PhotoGaleryComponent],
+      imports: [ActivatedRoute]
     })
       .compileComponents();
   });
