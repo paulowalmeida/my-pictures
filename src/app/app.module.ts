@@ -13,6 +13,7 @@ import { ErrorsModule } from './errors/errors.module';
     BrowserModule,
     AppRoutingModule,
     PhotosContainersModule,
+    AuthModule,
     ErrorsModule
   ],
   providers: [],
