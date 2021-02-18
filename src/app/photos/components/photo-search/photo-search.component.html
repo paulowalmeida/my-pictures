@@ -1,19 +1,21 @@
 <div class="container mb-4 col-6">
   <br>
-  <div class="input-group mb-3">
+  <div class="input-group mb-3" [formGroup]="formGroup">
     <div class="input-group-prepend">
       <span class="input-group-text no-border background-white"
         id="basic-addon1">
         <i aria-hidden="true" class="fa fa-search"></i>
       </span>
     </div>
-
+    
     <input
+      autofocus
+      formControlName="filter"
       type="search"
       class="form-control no-border"
-      [value]="value"
       placeholder="Pesquise uma foto pela descrição"
-      autofocus
-      (keyup)="debounce.next($event.target.value)">
+      [value]="value"
+      (keyup)="debounce.next($event.target.value)"
+      (input)="debounce.next($event.target.value)">
   </div>
 </div>

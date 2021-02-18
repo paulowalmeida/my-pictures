@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CapitalizePipe } from "./pipes/capitalize/capitalize.pipe";
 import { FilterByDescriptionPipe } from "./pipes/filter-by-description/filter-by-description.pipe";
 
@@ -11,13 +12,15 @@ import { FilterByDescriptionPipe } from "./pipes/filter-by-description/filter-by
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [
     FilterByDescriptionPipe,
     CapitalizePipe,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

@@ -1,19 +1,26 @@
 <div class="pb-5 mt-0">
   <div
-    *ngIf="hasMore; else message"
+    *ngIf="!hasMore && photosLength !== 0"
     class="text-center">
+    <span
+      style="color: #6c3497;">
+      Sem fotos para carregar
+    </span>
+  </div>
+
+  <div
+    class="text-center"
+    *ngIf="hasMore; else noContent">
     <button
+      (click)="loadMore()"
       class="btn"
       style="background-color: indigo; color: white;">
       Carregar mais fotos
     </button>
   </div>
 
-  <ng-template #message>
-    <p
-      class="text-center"
-      style="color: #6c3497;">
-      Sem fotos para carregar
-    </p>
-  </ng-template>
+  <div
+    *ngIf="!hasMore && photosLength === 0"
+    class="text-center">
+  </div>
 </div>

@@ -1,9 +1,11 @@
-<p
-  *ngIf="!photos.length && filter == ''; else listPhotos"
+<div
+  *ngIf="photos.length === 0; else listPhotos">
+  <p
   class="text-center text-muted">
-  Desculpe, {{ userName | capitalize }} não tem fotos.
-  <i class="fa fa-frown-o"></i>
-</p>
+    <i class="fa fa-frown-o"></i>
+    Desculpe, {{ username | capitalize }}. Não há fotos para exibir.
+  </p>
+</div>
 
 <ng-template #listPhotos>
   <ol class="list-unstyled">

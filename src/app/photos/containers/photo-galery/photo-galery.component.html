@@ -1,15 +1,18 @@
 <app-photo-search
-  (onTyping)="filter= $event"
+  (onFiltered)="onFilter($event)"
+  (onClearFilter)="onResetPhotos()"
   [value]="filter">
 </app-photo-search>
 
 <app-photo-list
   [username]="username"
   [photos]="photos | filterByDescription: filter"
-  [filter]="filter">
+  (onPhotosLength)="photosLength = $event"
+  (onHasMore)="hasMore = $event">
 </app-photo-list>
 
 <app-photo-load-more
-  (click)="load()"
-  [hasMore]="hasMore">
+  [hasMore]="hasMore"
+  [photosLength]="photosLength"
+  (onLoadMore)="loadMore()">
 </app-photo-load-more>
