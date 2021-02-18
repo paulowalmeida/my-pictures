@@ -2,25 +2,23 @@ import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
-import { CapitalizePipe } from "./pipes/capitalize/capitalize.pipe";
-import { FilterByDescriptionPipe } from "./pipes/filter-by-description/filter-by-description.pipe";
+import { DirectivesModule } from "./directives/directives.module";
+import { PipesModule } from "./pipes/pipes.module";
 
 @NgModule({
-  declarations: [
-    FilterByDescriptionPipe,
-    CapitalizePipe,
-  ],
   imports: [
     CommonModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule,
+    DirectivesModule
   ],
   exports: [
-    FilterByDescriptionPipe,
-    CapitalizePipe,
     CommonModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule,
+    DirectivesModule
   ]
 })
 export class SharedModule { }
