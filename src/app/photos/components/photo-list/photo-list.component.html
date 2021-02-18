@@ -1,7 +1,7 @@
 <div
   *ngIf="photos.length === 0; else listPhotos">
   <p
-  class="text-center text-muted">
+    class="text-center text-muted">
     <i class="fa fa-frown-o"></i>
     Desculpe, {{ username | capitalize }}. Não há fotos para exibir.
   </p>
@@ -11,7 +11,21 @@
   <ol class="list-unstyled">
     <li *ngFor="let cols of rows" class="row">
       <div *ngFor="let photo of cols" class="col-4">
-        <app-photo [photo]="photo"></app-photo>
+        <app-photo-card [title]=photo.description>
+          <app-photo [photo]="photo"></app-photo>
+        </app-photo-card>
+        <div class="text-center">
+          <h6>{{photo.description}}</h6>
+          <i
+            aria-hidden="true"
+            class="fa fa-heart-o fa-1x mr-2">
+          </i>{{ photo.likes }}
+          <i
+            aria-hidden="true"
+            class="fa fa-comment-o fa-1x mr-2 ml-2">
+          </i>{{ photo.comments }}
+        </div>
+        <br>
       </div>
     </li>
   </ol>

@@ -10,7 +10,7 @@ import { Photo } from '../../models/photo/photo.model';
 @Injectable({ providedIn: 'root' })
 export class PhotoService {
   constructor(
-    readonly httpClient: HttpClient) {}
+    readonly httpClient: HttpClient) { }
 
   getUserPhotos(userName: string): Observable<Photo[]> {
     const url = pathWithParameters.galery(userName);
@@ -26,9 +26,9 @@ export class PhotoService {
   private photosIncludeDescriptionToLowerCase(photos$: Observable<Photo[]>): Observable<Photo[]> {
     return photos$.pipe(
       map((photos) => {
-          return photos.map((photo) => {
-            photo.descriptionLowerCase = photo.description.toLocaleLowerCase();
-            return photo;
+        return photos.map((photo) => {
+          photo.descriptionLowerCase = photo.description.toLocaleLowerCase();
+          return photo;
         });
       })
     );

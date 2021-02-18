@@ -17,16 +17,14 @@ export class PhotoLoadMoreComponent implements OnChanges {
   onLoadMore = new EventEmitter<void>();
 
   constructor() { }
-    
-  ngOnChanges({photosLength, hasMore}: SimpleChanges): void {
-    if(photosLength) {
+
+  ngOnChanges({ photosLength, hasMore }: SimpleChanges): void {
+    if (photosLength) {
       this.photosLength = photosLength.currentValue;
-      console.log(this.photosLength);
     }
-    
-    if(hasMore) {
+
+    if (hasMore) {
       this.hasMore = hasMore.currentValue;
-      console.log(this.hasMore);
     }
   }
   loadMore() {

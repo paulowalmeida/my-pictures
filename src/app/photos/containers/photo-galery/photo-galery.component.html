@@ -7,8 +7,8 @@
 <app-photo-list
   [username]="username"
   [photos]="photos | filterByDescription: filter"
-  (onPhotosLength)="photosLength = $event"
-  (onHasMore)="hasMore = $event">
+  (onPhotosLength)="photosLength= $event"
+  (onHasMore)="hasMore= $event">
 </app-photo-list>
 
 <app-photo-load-more

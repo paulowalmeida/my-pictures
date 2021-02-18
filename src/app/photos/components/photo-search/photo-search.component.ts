@@ -34,8 +34,7 @@ export class PhotoSearchComponent implements OnInit {
         debounceTime(400)
       )
       .subscribe(filter => {
-        if(filter === ''){
-          console.log('filtro limpo: ', filter);
+        if (filter === '') {
           this.onClearFilter.emit();
         }
         this.onFiltered.emit(filter);

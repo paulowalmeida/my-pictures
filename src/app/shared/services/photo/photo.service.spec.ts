@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule} from '@angular/common/http/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PhotoService } from './photo.service';
 
 describe('PhotoService', () => {
@@ -7,7 +7,7 @@ describe('PhotoService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[HttpClientTestingModule]
+      imports: [HttpClientTestingModule]
     });
     service = TestBed.inject(PhotoService);
   });
