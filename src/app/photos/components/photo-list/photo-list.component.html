@@ -12,9 +12,9 @@
     <li *ngFor="let cols of rows" class="row">
       <div *ngFor="let photo of cols" class="col-4">
         <app-photo-card [title]="photo.description">
-          <app-photo [photo]="photo" appDarkenOnHover></app-photo>
+          <app-photo [photo]="photo" class="hoverable" appDarkenOnHover></app-photo>
           <div class="text-center">
-            <h6><strong>{{photo.description}}</strong></h6>
+            <h6>{{photo.description}}</h6>
             <i
               aria-hidden="true"
               class="fa fa-heart-o fa-1x mr-2">
