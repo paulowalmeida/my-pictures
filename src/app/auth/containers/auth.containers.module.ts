@@ -1,8 +1,15 @@
 import { NgModule } from "@angular/core";
+import { SigninContainerModule } from "./signin/signin-container.module";
+import { SignupContainerModule } from "./signup/signup-container.module";
 
 @NgModule({
   imports: [
-    AuthModule
+    SignupContainerModule,
+    SigninContainerModule
+  ],
+  exports:[
+    SignupContainerModule,
+    SigninContainerModule
   ]
 })
-export class AuthModule{ }
+export class AuthContainerModule{ }

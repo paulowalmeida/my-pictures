@@ -1,22 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 
-import { PhotoGaleryComponent } from './photo-galery.component';
+import { PhotoGaleryContainerComponent } from './photo-galery-container.component';
 
 describe('PhotoGaleryComponent', () => {
-  let component: PhotoGaleryComponent;
-  let fixture: ComponentFixture<PhotoGaleryComponent>;
+  let component: PhotoGaleryContainerComponent;
+  let fixture: ComponentFixture<PhotoGaleryContainerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PhotoGaleryComponent],
+      declarations: [PhotoGaleryContainerComponent],
       imports: [ActivatedRoute]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PhotoGaleryComponent);
+    fixture = TestBed.createComponent(PhotoGaleryContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

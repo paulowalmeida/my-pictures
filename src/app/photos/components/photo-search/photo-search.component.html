@@ -13,7 +13,7 @@
       formControlName="filter"
       type="search"
       class="form-control no-border"
-      placeholder="Pesquise uma foto pela descrição"
+      placeholder="Search photos by description"
       [value]="value"
       (keyup)="debounce.next($event.target.value)"
       (input)="debounce.next($event.target.value)">

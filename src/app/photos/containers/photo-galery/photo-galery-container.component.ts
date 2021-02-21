@@ -6,11 +6,11 @@ import { Photo } from 'src/app/shared/models/photo/photo.model';
 import { PhotoService } from 'src/app/shared/services/photo/photo.service';
 
 @Component({
-  selector: 'app-photo-galery',
-  templateUrl: './photo-galery.component.html',
-  styleUrls: ['./photo-galery.component.scss']
+  selector: 'app-photo-galery-container',
+  templateUrl: './photo-galery-container.component.html',
+  styleUrls: ['./photo-galery-container.component.scss']
 })
-export class PhotoGaleryComponent implements OnInit {
+export class PhotoGaleryContainerComponent implements OnInit {
 
   photos: Photo[] = [];
   photosLength = 0;

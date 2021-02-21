@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 
-import { PhotoFormModule } from './photo-form/photo-form.module';
-import { PhotoGaleryModule } from './photo-galery/photo-galery.module';
+import { PhotoFormContainerModule } from './photo-form/photo-form-container.module';
+import { PhotoGaleryContainerModule } from './photo-galery/photo-galery-container.module';
 
 @NgModule({
   imports: [
-    PhotoGaleryModule,
-    PhotoFormModule
+    PhotoGaleryContainerModule,
+    PhotoFormContainerModule
   ],
 })
 export class PhotosContainersModule { }

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { PhotoListModule } from './photo-list/photo-list.module';
 import { PhotoLoadMoreModule } from './photo-load-more/photo-load-more.module';
 import { PhotoSearchModule } from './photo-search/photo-search.module';
-import { PhotoCardComponent } from './photo-card/photo-card.component';
 
 
 @NgModule({

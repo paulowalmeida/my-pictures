@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PhotosContainersModule } from './photos/containers/photos.containers.module';
 import { ErrorsModule } from './errors/errors.module';
+import { AuthContainerModule } from './auth/containers/auth.containers.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +14,7 @@ import { ErrorsModule } from './errors/errors.module';
     BrowserModule,
     AppRoutingModule,
     PhotosContainersModule,
-    AuthModule,
+    AuthContainerModule,
     ErrorsModule
   ],
   providers: [],

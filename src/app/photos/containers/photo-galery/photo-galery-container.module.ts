@@ -2,15 +2,15 @@ import { NgModule } from "@angular/core";
 
 import { SharedModule } from "src/app/shared/shared.module";
 import { PhotoComponentsModule } from "../../components/photo.components.module";
-import { PhotoGaleryComponent } from "./photo-galery.component";
+import { PhotoGaleryContainerComponent } from "./photo-galery-container.component";
 
 @NgModule({
   declarations: [
-    PhotoGaleryComponent
+    PhotoGaleryContainerComponent
   ],
   imports: [
     SharedModule,
     PhotoComponentsModule
   ]
 })
-export class PhotoGaleryModule { }
+export class PhotoGaleryContainerModule { }
